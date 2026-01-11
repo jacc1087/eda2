@@ -14,7 +14,7 @@ Se han quedado fuera del proyecto, por ejemplo, datos como el presupuesto de cad
 <br><br>
 A continuación una breve descripción de cada tabla:
 <br>
-** TEAMS **
+#### TEAMS 
 Contiene información básica de los equipos clasificados para esta edición de la champions. País, año de fundación, número de veces que se ha proclamado campeón de este torneo, etc.
 #### TEAMS_STATISTICS
 En ella se pueden encontrar estadísticas más específicas, en lo que va de torneo, de cada uno de los equipos participantes, tales como: goles, datos de posesión, de balones recuperados, de tarjetas amarillas, etc. Con este tipo de datos se puede hacer un estudio de qué tipo de cualidades de un equipo están siendo más decisivas para estar arriba en la tabla.
@@ -24,4 +24,11 @@ Jugadores pertenecientes a los equipos anteriormente descritos. Se describen car
 Estadísticas de los jugadores en esta edición de la champions league. Son sólamente estadísticas de goles y asistencias.
 #### MANAGERS
 Contiene información básica de cada uno de los entrenadores de los equipos.
+
+## Modelo y esquema
+En la creación de tablas, se utiliza la opción "AUTO_INCREMENT" en las tablas principales, TEAMS, PLAYERS y MANAGERS, por tratarse de diferentes entidades. Sin embargo, en las tablas TEAMS_STATISTICS y PLAYERS_STATISTICS, al ser tablas hijas con datos específicos de algunas de las tablas padre, simplemente se emparejan sus id con los de las tablas padre para añadirle algunos datos, mediante claves foráneas.
+<br><br>
+En todas las tablas se aplica el campo id como primary key, porque se considera que es la forma más sencilla de relacionar datos, si en lugar de esto se utilizasen los nombres de equipos habría que ser muy específico para encontrar cada nombre de equipo, jugador, etc para relacionarlo con otras tablas.
+<br><br>
+
 
