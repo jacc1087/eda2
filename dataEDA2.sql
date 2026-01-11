@@ -36,7 +36,6 @@ INSERT INTO Teams(team_name, country, foundation_date, champion) VALUES
 ('Union Saint-Gilloise', 'Belgium', '1897-11-27', 0),
 ('Villarreal CF', 'Spain', '1923-09-10', 0);
 
--- Comprobar datos correctos
 INSERT INTO Teams_Statistics(team_id, goals_scored, goals_conceded, possession, balls_recovered, average_distance, yellow_cards, red_cards) VALUES 
 (1, 5, 18, 51, 217, 338, 14, 1),      -- Ajax (1)
 (2, 17, 1, 54, 205, 233, 16, 0),      -- Arsenal FC (2)
@@ -75,9 +74,6 @@ INSERT INTO Teams_Statistics(team_id, goals_scored, goals_conceded, possession, 
 (35, 7, 15, 39, 291, 230, 14, 0),      -- Union Saint-Gilloise (35)
 (36, 4, 13, 45, 212, 345, 16, 0);	  -- Villarreal (36)
   
-  
--- Jugadores inscritos en la Champions League
--- Añadir país, edad, estatura, peso, posición, etc
 INSERT INTO Players (player_name, team_id, dorsal, country, age, height, weight, demarcation) VALUES
 -- Ajax
 ('Remko Pasveer', 1, 22, 'Países Bajos', 42, 187, 88, 'POR'),
@@ -1031,7 +1027,6 @@ INSERT INTO Players (player_name, team_id, dorsal, country, age, height, weight,
 ('Hugo López', 36, 32, 'España', 23, 185, 78, 'DL'),
 ('Víctor Moreno', 36, 36, 'España', 21, 182, 75, 'DL');
 
--- Estadísticas de los jugadores de la champions league
 INSERT INTO Players_Statistics(player_id, goals, assists) VALUES 
 -- Ajax
 (15,2,0),(24,1,0),(5,1,0),(25,1,0),(22,0,1),(20,0,1),(27,0,1),
@@ -1105,8 +1100,6 @@ INSERT INTO Players_Statistics(player_id, goals, assists) VALUES
 (885,2,0),(883,2,0),(869,1,0),(877,1,0),(872,1,0),(876,0,1),(884,0,1),(878,0,1),(881,0,1),
 -- Villarreal
 (895,1,0),(902,1,0),(909,1,0),(910,1,0),(905,0,2),(912,0,1),(900,0,1);
-
-
 
 -- Managers que entrenan actualmente en Champions
 INSERT INTO Manager (manager_name, team_id, age, country, champion) VALUES

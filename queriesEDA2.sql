@@ -16,15 +16,20 @@ SELECT team_name, champion FROM Teams WHERE champion > 0 ORDER BY champion DESC;
 	2. Obtener todas los goles que se han anotado en esta edición
 ========================================================================================================================================== */
 SELECT SUM(goals_scored) FROM Teams_Statistics;
-	-- Se han marcado 365 goles en esta edición de la champions league hasta el momento, este dato se puede contrastar en la web oficial
+	-- Se han marcado 365 goles en esta edición de la champions league hasta el momento
 
 
 /* ==========================================================================================================================================
 	3. Nacionalidad que más jugadores tiene inscritos en esta edición de la Champions League
 ========================================================================================================================================== */
-SELECT country,COUNT(player_id) AS Quantity FROM Players GROUP BY country ORDER BY Quantity DESC;
+SELECT 
+	country,COUNT(player_id) AS Quantity 
+FROM Players 
+GROUP BY country 
+ORDER BY Quantity DESC;
+-- Se obtiene una abrumadora mayoría de jugadores españoles en esta competición.
 
-	-- Subconsulta para comprobar si se han tenido en cuenta todos los jugadores en la consulta anterior
+	-- Para comprobar si se han tenido en cuenta todos los jugadores se realiza consulta que sume los valores de la consulta anterior mediante una subconsulta
 	SELECT 
 		SUM(Quantity) AS Total_Jugadores
 	FROM (
@@ -33,7 +38,7 @@ SELECT country,COUNT(player_id) AS Quantity FROM Players GROUP BY country ORDER 
             COUNT(player_id) AS Quantity 
 		FROM Players 
     GROUP BY country) AS subconsulta;
-    -- Efectivamente, se han tenido en cuenta todos los jugadores para agruparlos por nacionalidad, 915
+    -- Obtenemos los 915 jugadores inscritos en la competición, por tanto, los datos deben ser correctos.
     
 /* ==========================================================================================================================================
 	4. Crear una clasificación de todos los equipos en función de los puntos obtenidos hasta el momento
@@ -85,28 +90,54 @@ SELECT country,COUNT(player_id) AS Quantity FROM Players GROUP BY country ORDER 
 	END;
     
 	-- A continuación se obtiene una clasificación que se ciñe a los puntos de cada equipo, en caso de empate ordena al azar los equipos
-	SELECT team_name,points FROM Teams A JOIN Teams_Statistics B ON A.team_id = B.team_id ORDER BY points DESC;
+	SELECT 
+		team_name,
+        points 
+    FROM Teams A JOIN Teams_Statistics B 
+    ON A.team_id = B.team_id 
+    ORDER BY points DESC;
     
     -- Para que sea más real, vamos a crear una nueva columna llamada GOAL_DIFFERENCE, que tenga en cuenta este dato para posicionar a los equipos en caso de empate de puntos
     ALTER TABLE Teams_Statistics ADD COLUMN goal_difference INT GENERATED ALWAYS AS (goals_scored - goals_conceded) VIRTUAL;
     
     -- Comprobamos de nuevo, teniendo en cuenta los empates de puntos y obtenemos la siguiente clasificación, que se ajusta más a la real de la web oficial
-	SELECT team_name,points,goal_difference FROM Teams A JOIN Teams_Statistics B ON A.team_id = B.team_id ORDER BY points DESC, goal_difference DESC;
+	SELECT 
+		team_name,
+        points,
+        goal_difference 
+	FROM Teams A JOIN Teams_Statistics B 
+    ON A.team_id = B.team_id 
+    ORDER BY points DESC, goal_difference DESC;
     
 /* ==========================================================================================================================================
 	5. Comprobar cuáles son los equipos que más kilómetros han recorrido
 ========================================================================================================================================== */
-SELECT team_name, average_distance FROM Teams A JOIN Teams_Statistics B ON A.team_id = B.team_id ORDER BY average_distance DESC;  
+SELECT 
+	team_name, 
+    average_distance 
+FROM Teams A JOIN Teams_Statistics B 
+ON A.team_id = B.team_id 
+ORDER BY average_distance DESC; 
 
 /* ==========================================================================================================================================
 	6. Comprobar cuáles son los equipos con más posesión de balón
 ========================================================================================================================================== */
-SELECT team_name, possession FROM Teams A JOIN Teams_Statistics B ON A.team_id = B.team_id ORDER BY possession DESC;  
+SELECT 
+	team_name, 
+    possession 
+FROM Teams A JOIN Teams_Statistics B 
+ON A.team_id = B.team_id 
+ORDER BY possession DESC;  
 
 /* ==========================================================================================================================================
 	7. Comprobar cuáles son los equipos con más balones recuperados
 ========================================================================================================================================== */
-SELECT team_name, balls_recovered FROM Teams A JOIN Teams_Statistics B ON A.team_id = B.team_id ORDER BY balls_recovered DESC; 
+SELECT 
+	team_name, 
+    balls_recovered 
+FROM Teams A JOIN Teams_Statistics B 
+ON A.team_id = B.team_id 
+ORDER BY balls_recovered DESC; 
 
 /* ==========================================================================================================================================
 	8. Sería interesante conocer el dato de cuántos de los 10 primeros equipos en las listas anteriores están situados entre los 10 primeros en la clasificación
@@ -336,7 +367,7 @@ END //
 
 DELIMITER ;
 
--- Probamoe el procedimiento con un par de países con un gran número de jugadores inscritos, que probablemente puedan completar la alineación
+-- Probamos el procedimiento con un par de países con un gran número de jugadores inscritos, que probablemente puedan completar la alineación
 CALL GenerarAlineacion('España');
 CALL GenerarAlineacion('Brasil');
 
@@ -361,7 +392,7 @@ SELECT team_name,
        TIMESTAMPDIFF(YEAR, foundation_date, CURDATE()) AS team_years
 FROM Teams
 ORDER BY foundation_date;
--- Es llamativo encontrar a equipos como el Brugge o el Slavia de Praga entre los ingleses.
+-- Es llamativo encontrar a equipos como el Brugge o el Slavia de Praga entre los ingleses, que se sabe que son los más antiguos.
 
 /* ==========================================================================================================================================
 	18. Relacionar si los equipos con mas tarjetas amarillas son los que mas balones recuperan 

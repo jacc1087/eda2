@@ -1,9 +1,7 @@
 CREATE DATABASE IF NOT EXISTS ChampionsLeague;
 USE ChampionsLeague;
 
--- Creación de la tabla de equipos
--- DROP TABLE Teams; 
-CREATE TABLE Teams(
+CREATE TABLE IF NOT EXISTS Teams(
 	team_id INT AUTO_INCREMENT PRIMARY KEY,
     team_name VARCHAR(50) UNIQUE, 
     country VARCHAR(30) NOT NULL,
@@ -11,10 +9,7 @@ CREATE TABLE Teams(
     champion INT(2)
 );
  
--- Estadísticas de equipos en esta edición
--- Comprobar que los datos son reales
--- DROP TABLE Teams_Statistics;
-CREATE TABLE Teams_Statistics(
+CREATE TABLE IF NOT EXISTS Teams_Statistics(
 	team_id INT PRIMARY KEY,
     goals_scored INT(3),
     goals_conceded INT(3),
@@ -26,33 +21,27 @@ CREATE TABLE Teams_Statistics(
 	FOREIGN KEY (team_id) REFERENCES Teams(team_id) 
 );
 
--- Creación de la tabla Jugadores 
--- DROP TABLE Players;
-CREATE TABLE Players(
+CREATE TABLE IF NOT EXISTS Players(
 	player_id INT AUTO_INCREMENT PRIMARY KEY,
     player_name VARCHAR(50),
     team_id INT,
     dorsal INT(2),
     country VARCHAR(30),
     age INT,
-    height INT CHECK (height > 0),
-    weight INT CHECK (weight > 0),
+    height INT CHECK (height > 100),
+    weight INT CHECK (weight > 40),
     demarcation VARCHAR (5) NOT NULL,
     FOREIGN KEY (team_id) REFERENCES Teams(team_id) 
 );
 
--- Estadísticas de jugadores en esta edición
--- DROP TABLE Players_Statistics;
-CREATE TABLE Players_Statistics(
+CREATE TABLE IF NOT EXISTS Players_Statistics(
 	player_id INT PRIMARY KEY,
     goals INT,
     assists INT,
     FOREIGN KEY (player_id) REFERENCES Players(player_id) 
 );
 
--- Creación de la tabla managers
--- DROP TABLE Manager;
-CREATE TABLE Manager(
+CREATE TABLE IF NOT EXISTS Managers(
 	manager_id INT AUTO_INCREMENT PRIMARY KEY,
     manager_name VARCHAR(50),
     team_id INT,
@@ -62,8 +51,3 @@ CREATE TABLE Manager(
     FOREIGN KEY (team_id) REFERENCES Teams(team_id) 
 );
 
- -- DROP TABLE Teams;
- -- DROP TABLE Teams_Statistics;
- -- DROP TABLE Players;
- -- DROP TABLE Players_Statistics;
- -- DROP TABLE Manager;
