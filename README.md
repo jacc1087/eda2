@@ -6,9 +6,11 @@ El tema sobre el que tratan los datos es el torneo de fútbol de la Champions Le
 
 ## Datos
 
-Se trata del fichero SchemaEDA2.sql <br>
+Se trata del fichero SchemaEDA2.sql <br><br>
 En él podemos encontrar el código para la creación de 5 tablas sobre las que trabajaremos las consultas sql.
-
+<br>
+A continuación una breve descripción de cada tabla:
+<br>
 #### TEAMS
 Contiene información básicas de los equipos clasificados para esta edición de la champions. 
 #### TEAMS_STATISTICS
