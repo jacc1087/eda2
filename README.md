@@ -7,13 +7,13 @@ El tema sobre el que tratan los datos es el torneo de fútbol de la Champions Le
 ## Modelo y esquema
 Creación de 5 tablas sobre las que trabajaremos las consultas sql.
 
-#### Tabla TEAMS
+#### TEAMS
 Contiene información básicas de los equipos clasificados para esta edición de la champions.
-#### Tabla TEAMS_STATISTICS
+#### TEAMS_STATISTICS
 En ella se pueden encontrar estadísticas más específicas de cada uno de los equipos participantes.
-#### Tabla PLAYERS
+#### PLAYERS
 Jugadores pertenecientes a los equipos anteriormente descritos.
-#### Tabla PLAYERS_STATISTICS
+#### PLAYERS_STATISTICS
 Estadísticas de los jugadores en esta edición de la champions league.
-#### Tabla MANAGERS
+#### MANAGERS
 Contiene información básica de cada uno de los entrenadores de los equipos.
