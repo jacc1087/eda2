@@ -12,7 +12,7 @@ En él podemos encontrar el código para la creación de 5 tablas sobre las que 
 A continuación una breve descripción de cada tabla:
 <br>
 #### TEAMS
-Contiene información básicas de los equipos clasificados para esta edición de la champions. 
+Contiene información básica de los equipos clasificados para esta edición de la champions. País, año de fundación, número de veces que se ha proclamado campeón de este torneo, etc.
 #### TEAMS_STATISTICS
 En ella se pueden encontrar estadísticas más específicas de cada uno de los equipos participantes. Estadísticas de los equipos en lo que va de torneo, goles, datos de posesión, de balones recuperados, de tarjetas amarillas, etc. Con este tipo de datos se puede hacer un estudio de qué tipo de cualidades de un equipo están siendo más decisivas para estar arriba en la tabla.
 #### PLAYERS
