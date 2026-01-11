@@ -4,16 +4,20 @@ Para el desarrollo de este proyecto se va a crear una base de datos desde cero.
 
 El tema sobre el que tratan los datos es el torneo de fútbol de la Champions League en su edición 25/26, aunque es un torneo que todavía no ha finalizado, pero ya acumula unos cuantos partidos y se pueden sacar datos interesantes.
 
-## Modelo y esquema
-Creación de 5 tablas sobre las que trabajaremos las consultas sql.
+## Datos
 
-#### <br>TEAMS
-Contiene información básicas de los equipos clasificados para esta edición de la champions.
+Se trata del fichero SchemaEDA2.sql
+En él podemos encontrar el código para la creación de 5 tablas sobre las que trabajaremos las consultas sql.
+
+#### TEAMS
+Contiene información básicas de los equipos clasificados para esta edición de la champions. 
 #### TEAMS_STATISTICS
-En ella se pueden encontrar estadísticas más específicas de cada uno de los equipos participantes.
+En ella se pueden encontrar estadísticas más específicas de cada uno de los equipos participantes. Estadísticas de los equipos en lo que va de torneo, goles, datos de posesión, de balones recuperados, de tarjetas amarillas, etc. Con este tipo de datos se puede hacer un estudio de qué tipo de cualidades de un equipo están siendo más decisivas para estar arriba en la tabla.
 #### PLAYERS
-Jugadores pertenecientes a los equipos anteriormente descritos.
+Jugadores pertenecientes a los equipos anteriormente descritos. Se describen características personales de los jugadores, tales como dorsal, país de procedencia, edad, posición, etc.
 #### PLAYERS_STATISTICS
-Estadísticas de los jugadores en esta edición de la champions league.
+Estadísticas de los jugadores en esta edición de la champions league. Son sólamente estadísticas de goles y asistencias.
 #### MANAGERS
 Contiene información básica de cada uno de los entrenadores de los equipos.
+
+Se han quedado fuera del proyecto, por ejemplo, datos como el presupuesto de cada equipo, porque es algo complejo de obtener al influir en ello factores como la publicidad o patrocinadores y no ser datos totalmente transparentes, sino que habría que ajustarlos específicamente a cada equipo y no se consideran datos tan trascendentales como para centrarnos en ello.
