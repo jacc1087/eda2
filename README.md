@@ -47,6 +47,15 @@ No se utiliza CAST para conversión de tipos de datos porque al tratarse de una 
 Se utilizan también funciones de fecha y agregaciones (SUM, COUNT, etc). También algunas subqueries en sitios donde encajan bien.
 <br><br>
 
+## EDA en SQL
+El EDA se encuentra en el archivo "queriesEDA2.sql". Este archivo no es como los otros dos antes ejecutados, porque las queries se deben ejecutar de forma independiente cada una de ellas. 
+### Requisitos a cumplir
+- Mínimo 3 JOINs.
+- CASE y lógica condicional.
+- Agregaciones.
+- CTEs (WITH), incluyendo encadenadas.
+- Funciones ventana (OVER (PARTITION BY...)).
+- 1 VIEW y FUNCIÓN con consultas.
 ​
 
 
