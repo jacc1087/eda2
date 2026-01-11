@@ -55,9 +55,9 @@ Se realizan 20 queries con datos que se consideran interesantes para un aficiona
 ### Requisitos a cumplir
 - Mínimo 3 JOINs. Se utilizan bastantes INNER JOIN en las consultas, en este caso no se utiliza ningún LEFT JOIN porque al haber creado la base de datos desde cero, se sabe con certeza que no existen datos nulos y que con la utilización de INNER se pueden obtener los mismos resultados de forma más eficiente.
 - CASE y lógica condicional. Se utilizan en varias consultas para asignar valores de texto cuando se cumplen ciertas condiciones, como por ejemplo, asignar la etiqueta de joven promesa a futbolistas que tengan 20 años o menos y hayan participado en goles de forma directa o indirecta.
-- Agregaciones. 
-- CTEs (WITH), incluyendo encadenadas.
-- Funciones ventana (OVER (PARTITION BY...)).
+- Agregaciones. Se utilizan varias de las funciones de agregación, COUNT para contar el número de filas, AVG para realizar una media o SUM para sumar el número de valores numéricos de una columna.
+- CTEs (WITH), incluyendo encadenadas. Se utilizan tablas temporales con WITH (concretamente en las consultas 8,11 y 20) para consultas que comparan varias consultas y necesitan de la creación de una tabla temporal que clarifique los datos, por ejemplo, en la consulta 8, cuando se quiere estudiar si influye el porcentaje de posesión de los equipos en su posición en la tabla.
+- Funciones ventana (OVER (PARTITION BY...)). 
 - 1 VIEW y FUNCIÓN con consultas.
 ​
 
