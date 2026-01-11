@@ -49,10 +49,13 @@ Se utilizan también funciones de fecha y agregaciones (SUM, COUNT, etc). Tambi�
 
 ## EDA en SQL
 El EDA se encuentra en el archivo "queriesEDA2.sql". Este archivo no es como los otros dos antes ejecutados, porque las queries se deben ejecutar de forma independiente cada una de ellas. 
+<br><br>
+Se realizan 20 queries con datos que se consideran interesantes para un aficionado al fútbol y seguidor de esta competición en concreto, los resultados obtenidos se pueden comprobar en la web oficial de la uefa, se ha tenido muy en cuenta que se trate de datos reales y cuando al realizar la consulta no han coincidido se han hecho las modificaciones oportunas para que coincidan.
+<br><br>
 ### Requisitos a cumplir
-- Mínimo 3 JOINs.
-- CASE y lógica condicional.
-- Agregaciones.
+- Mínimo 3 JOINs. Se utilizan bastantes INNER JOIN en las consultas, en este caso no se utiliza ningún LEFT JOIN porque al haber creado la base de datos desde cero, se sabe con certeza que no existen datos nulos y que con la utilización de INNER se pueden obtener los mismos resultados de forma más eficiente.
+- CASE y lógica condicional. Se utilizan en varias consultas para asignar valores de texto cuando se cumplen ciertas condiciones, como por ejemplo, asignar la etiqueta de joven promesa a futbolistas que tengan 20 años o menos y hayan participado en goles de forma directa o indirecta.
+- Agregaciones. 
 - CTEs (WITH), incluyendo encadenadas.
 - Funciones ventana (OVER (PARTITION BY...)).
 - 1 VIEW y FUNCIÓN con consultas.
