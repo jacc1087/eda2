@@ -7,6 +7,8 @@ El tema sobre el que tratan los datos es el torneo de fútbol de la Champions Le
 ## Datos
 
 Se trata del fichero SchemaEDA2.sql <br><br>
+
+Se han quedado fuera del proyecto, por ejemplo, datos como el presupuesto de cada equipo, porque es algo complejo de obtener al influir en ello factores como la publicidad o patrocinadores y no ser datos totalmente transparentes, sino que habría que ajustarlos específicamente a cada equipo y no se consideran datos tan trascendentales como para centrarnos en ello.<br><br>
 En él podemos encontrar el código para la creación de 5 tablas sobre las que trabajaremos las consultas sql.
 <br><br>
 A continuación una breve descripción de cada tabla:
@@ -22,4 +24,3 @@ Estadísticas de los jugadores en esta edición de la champions league. Son sól
 #### MANAGERS
 Contiene información básica de cada uno de los entrenadores de los equipos.
 
-Se han quedado fuera del proyecto, por ejemplo, datos como el presupuesto de cada equipo, porque es algo complejo de obtener al influir en ello factores como la publicidad o patrocinadores y no ser datos totalmente transparentes, sino que habría que ajustarlos específicamente a cada equipo y no se consideran datos tan trascendentales como para centrarnos en ello.
