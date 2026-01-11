@@ -14,7 +14,7 @@ A continuación una breve descripción de cada tabla:
 #### TEAMS
 Contiene información básica de los equipos clasificados para esta edición de la champions. País, año de fundación, número de veces que se ha proclamado campeón de este torneo, etc.
 #### TEAMS_STATISTICS
-En ella se pueden encontrar estadísticas más específicas de cada uno de los equipos participantes. Estadísticas de los equipos en lo que va de torneo, goles, datos de posesión, de balones recuperados, de tarjetas amarillas, etc. Con este tipo de datos se puede hacer un estudio de qué tipo de cualidades de un equipo están siendo más decisivas para estar arriba en la tabla.
+En ella se pueden encontrar estadísticas más específicas, en lo que va de torneo, de cada uno de los equipos participantes, tales como: goles, datos de posesión, de balones recuperados, de tarjetas amarillas, etc. <br> Con este tipo de datos se puede hacer un estudio de qué tipo de cualidades de un equipo están siendo más decisivas para estar arriba en la tabla.
 #### PLAYERS
 Jugadores pertenecientes a los equipos anteriormente descritos. Se describen características personales de los jugadores, tales como dorsal, país de procedencia, edad, posición, etc.
 #### PLAYERS_STATISTICS
