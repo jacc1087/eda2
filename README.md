@@ -62,7 +62,10 @@ Se realizan 20 queries con datos que se consideran interesantes para un aficiona
 - PROCEDURE. Se utiliza un procedimiento almacenado para realizar tareas más complejas que requieren la utilización de INSERT, por ejemplo, en la consulta 14, que crea una alineación mediante la inserción de un país como parámetro. Para ello crea una tabla temporal donde inserta 1 portero, 4 defensas, 4 centrocampistas y 2 delanteros, todos del mismo país y de forma aleatoria.
 
 ## Resultado final
-- Obtención de varias agrupaciones relevantes, por ejemplo, en la consulta 4 se obtiene una clasificación de los equipos en función de los puntos y la diferencia de goles hasta el momento o en la consulta o en la consulta 12, que se obtiene el top 20 de máximos goleadores en la competición.
+Obtención de varias agrupaciones relevantes:
+- En la consulta 4 se obtiene una clasificación de los equipos en función de los puntos y la diferencia de goles hasta el momento
+- En la consulta 12 se obtiene el top 20 de máximos goleadores en la competición.
+- En la consulta 20 se obtiene la importancia que tienen para su equipo los futbolistas más importantes hasta ahora.
 ​
 
 
