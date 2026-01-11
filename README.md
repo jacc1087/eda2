@@ -57,8 +57,9 @@ Se realizan 20 queries con datos que se consideran interesantes para un aficiona
 - CASE y lógica condicional. Se utilizan en varias consultas para asignar valores de texto cuando se cumplen ciertas condiciones, como por ejemplo, asignar la etiqueta de joven promesa a futbolistas que tengan 20 años o menos y hayan participado en goles de forma directa o indirecta.
 - Agregaciones. Se utilizan varias de las funciones de agregación, COUNT para contar el número de filas, AVG para realizar una media o SUM para sumar el número de valores numéricos de una columna.
 - CTEs (WITH), incluyendo encadenadas. Se utilizan tablas temporales con WITH (concretamente en las consultas 8,11 y 20) para consultas que comparan varias consultas y necesitan de la creación de una tabla temporal que clarifique los datos, por ejemplo, en la consulta 8, cuando se quiere estudiar si influye el porcentaje de posesión de los equipos en su posición en la tabla.
-- Funciones ventana (OVER (PARTITION BY...)). 
-- 1 VIEW y FUNCIÓN con consultas.
+- Funciones ventana (OVER (PARTITION BY...)). Se utilizan para crear rankings útiles para obtener información concreta de algo, por ejemplo en la consulta 11, se crea un ranking de los jugadores de cada posición con más goles, y se selecciona el número 1 de cada posición para devolver lo solicitado en la consulta.
+- 1 VIEW y FUNCIÓN con consultas. Se crea una vista para simplificar consultas más complejas y poder utilizar la información obtenida de ellas para otras consultas de forma rápida, por ejemplo, se crea una vista en la consulta 12 para obtener el top 20 de goleadores en la competición, y después, se reutiliza esta vista en la consulta 13 para averiguar con una función con consulta de agregación la media de altura de estos goleadores, para así obtener un insight sobre el tipo de delantero que está triunfando en esta edición de la champions league hasta este momento.
+- PROCEDURE. Se utiliza un procedimiento almacenado para realizar tareas más complejas que requieren la utilización de INSERT, por ejemplo, en la consulta 14, que crea una alineación mediante la inserción de un país como parámetro. Para ello crea una tabla temporal donde inserta 1 portero, 4 defensas, 4 centrocampistas y 2 delanteros, todos del mismo país y de forma aleatoria. 
 ​
 
 
