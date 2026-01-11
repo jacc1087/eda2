@@ -30,5 +30,6 @@ En la creación de tablas, se utiliza la opción "AUTO_INCREMENT" en las tablas 
 <br><br>
 En todas las tablas se aplica el campo id como primary key, porque se considera que es la forma más sencilla de relacionar datos, si en lugar de esto se utilizasen los nombres de equipos habría que ser muy específico para encontrar cada nombre de equipo, jugador, etc para relacionarlo con otras tablas.
 <br><br>
+Se aplican varios constraint para controlar los datos que se inserten en las tablas, UNIQUE para datos que no pueden repetirse, NOT NULL para campos que no pueden quedar nulos, incluso un par de CHECK, para controlar que se cumplen algunos datos, como que un jugador no pueda medir menos de 100 cm o pesar menos de 40 kg.
 
 
