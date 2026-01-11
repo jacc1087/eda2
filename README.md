@@ -31,5 +31,23 @@ En la creación de tablas, se utiliza la opción "AUTO_INCREMENT" en las tablas 
 En todas las tablas se aplica el campo id como primary key, porque se considera que es la forma más sencilla de relacionar datos, si en lugar de esto se utilizasen los nombres de equipos habría que ser muy específico para encontrar cada nombre de equipo, jugador, etc para relacionarlo con otras tablas.
 <br><br>
 Se aplican varios constraint para controlar los datos que se inserten en las tablas, UNIQUE para datos que no pueden repetirse, NOT NULL para campos que no pueden quedar nulos, incluso un par de CHECK, para controlar que se cumplen algunos datos, como que un jugador no pueda medir menos de 100 cm o pesar menos de 40 kg.
+<br><br>
+Normalización: Alcanza al menos 3NF en la mayoría de tablas, ya que separa entidades (equipos, jugadores, managers) de sus estadísticas y elimina dependencias mediante tablas dedicadas como Teams_Statistics y Players_Statistics.
+<br><br>
+
+## Implementación
+Se trata utiliza MySQL para el sistema de gestión de bases de datos y Workbench como entorno para trabajar con ello.
+<br><br>
+Tanto el archivo ya nombrado con el esquema "SchemaEDA2.sql" como el que contiene los datos "dataEDA2.sql", se pueden ejecutar desde cero en el entorno Workbench utilizando la combinación de selección de todo el contenido (command + a, en iOS) y pulsando el botón de ejecutar porción seleccionada (icono rayo).
+<br><br>
+Se utilizan las sentencias más comunes, tales como INSERT, UPDATE y DELETE, en el archivo "queriesEDA2.sql", para insertar o modificar datos interesantes o eliminar datos que no se utilicen.
+<br><br>
+No se utiliza CAST para conversión de tipos de datos porque al tratarse de una base de datos creada desde cero, se han utilizado los tipos de datos que se cree más convenientes para cada uno de las columnas insertadas. Por tanto, no se cree conveniente.
+<br><br>
+Se utilizan también funciones de fecha y agregaciones (SUM, COUNT, etc). También algunas subqueries en sitios donde encajan bien.
+<br><br>
+
+​
+
 
 
